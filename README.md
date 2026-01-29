@@ -2,7 +2,6 @@
 src="https://i.imgur.com/QxNBXx0.jpeg" alt="banner">
 
 <h1 align="center">
-  <img src="https://i.imgur.com/aJOeqWF.jpeg" width="22px" alt="icon">
  💕 SIZU - BOT 💕
  🍓  MASSANGER GROUP CHAT BOT 🍓
 </h1>
