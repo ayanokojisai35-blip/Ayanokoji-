@@ -25,7 +25,7 @@ module.exports = {
     name: "4k",
     aliases: ["upscale", "hd", "enhance"],
     version: "1.0",
-    author: "NeoKEX",
+    author: "SiFu",
     countDown: 15,
     role: 0,
     longDescription: "Upscales an image to higher resolution (simulated 4K) using AI.",
@@ -43,14 +43,14 @@ module.exports = {
     const imageUrl = extractImageUrl(args, event);
 
     if (!imageUrl) {
-      return message.reply("❌ Please provide an image URL or reply to an image to upscale.");
+      return message.reply("🎀 ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀɴ ɪᴍᴀɢᴇ");
     }
 
     if (!fs.existsSync(CACHE_DIR)) {
         fs.mkdirSync(CACHE_DIR, { recursive: true });
     }
 
-    message.reaction("⏳", event.messageID);
+    message.reaction("✨", event.messageID);
     let tempFilePath; 
 
     try {
@@ -79,28 +79,28 @@ module.exports = {
       
       await pipeline(imageDownloadResponse.data, fs.createWriteStream(tempFilePath));
 
-      message.reaction("✅", event.messageID);
+      message.reaction("🎀", event.messageID);
       
       // 5. Reply with the final image
       await message.reply({
-        body: `🖼️ Image successfully upscaled to 4K!`,
+        body: `🎀 𝐇𝐞𝐫𝐞'𝐬 𝐲𝐨𝐮𝐫 𝟒𝐤 𝐢𝐦𝐚𝐠𝐞 𝐛𝐚𝐛𝐲`,
         attachment: fs.createReadStream(tempFilePath)
       });
 
     } catch (error) {
-      message.reaction("❌", event.messageID);
+      message.reaction("😿", event.messageID);
       
-      let errorMessage = "❌ Failed to upscale image. An error occurred.";
+      let errorMessage = "🎀 api chudling pong hoye geche bby";
       if (error.response) {
          if (error.response.status === 400) {
-             errorMessage = `❌ Error 400: The provided URL might be invalid or the image is too small/large.`;
+             errorMessage = `💔 Error 400: The provided URL might be invalid or the image is too small/large.`;
          } else {
-             errorMessage = `❌ HTTP Error ${error.response.status}. The API may be unavailable.`;
+             errorMessage = `💔 HTTP Error ${error.response.status}. The API may be unavailable.`;
          }
       } else if (error.message.includes('timeout')) {
-         errorMessage = `❌ Request timed out (API response too slow).`;
+         errorMessage = `😿 Request timed out (API response too slow).`;
       } else if (error.message) {
-         errorMessage = `❌ ${error.message}`;
+         errorMessage = `😿 ${error.message}`;
       }
 
       console.error("4K Upscale Command Error:", error);
