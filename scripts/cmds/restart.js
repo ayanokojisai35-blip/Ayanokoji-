@@ -4,7 +4,7 @@ module.exports = {
 	config: {
 		name: "restart",
 		version: "1.1",
-		author: "NTKhang",
+		author: "sifu",
 		countDown: 5,
 		role: 2,
 		description: {
@@ -23,7 +23,7 @@ module.exports = {
 			restartting: "🔄 | Đang khởi động lại bot..."
 		},
 		en: {
-			restartting: "✨𝑺𝑰𝒁𝑼𝑲𝑨🕊️ | 𝑹𝒆𝒔𝒕𝒂𝒓𝒕𝒊𝒏𝒈....."
+			restartting: "🫨 𝑹𝒆𝒔𝒕𝒂𝒓𝒕𝒊𝒏𝒈....."
 		}
 	},
 
